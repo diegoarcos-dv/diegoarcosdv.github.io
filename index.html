@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Cumpleaños Vivis</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+IN+Guides&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="arreglo animar">  
+        <img src="flor.png" alt="Imagen flor">
+    </div>
+
+    <div class="encabezado animar">
+        <img class="Vvs" src="Vivis.png" alt="Imagen Vivis">
+        <h1>Mi Fiesta de Cumpleaños</h1>  
+    </div>
+
+    <div class="invitado animar">
+        <label class="nombre-invitado">Hola, <span id="nombre"></span>!</label>
+        <label class="texto-frase">Hay momentos en la vida que imaginamos, soñamos y esperamos. Uno de esos momentos ha llegado.</label>
+        <label class="tu-presencia">Tu presencia en mis XV años es muy importante para mi.</label>
+        <label class="celebremos">Celebremos juntos el próximo</label>
+        <label class="fecha">4 de Noviembre</label>
+        <label class="hora">16:30 horas</label>
+    </div>
+
+    <div class="asistencia animar">
+        <span>Asistencia confirmada</span>
+        <br>
+        <span>2 personas</span>
+    </div>
+
+    <div class="barra animar"></div>
+
+    <div class="lugar1 animar">
+        <img src="ubi.png" alt="">
+        <label for="" class="ceremonia">Ceremonia Religiosa</label>
+        
+        <label for="" class="iglesia">Parroquia de la Eucaristia 16:30</label>
+        
+        <label for="" class="ubi1">Loma larga 10 , progreso industrial, Nicolás Romero Edo de México</label>
+            <img src="mapsIcon .png" alt="">
+    </div>
+
+
+
+    <div class="mesaRegalos animar">
+        <label for="" class="mesa">Mesa de regalos</label>
+        <span>Tu presencia es el mejor regalo, pero si gustas regalarme algo puedes hacerlo en:</span>
+        <button>
+            <img src="liver.Jpeg" alt="">
+            <label for="">Evento:949393</label>
+        </button>
+        <button>
+            <img src="palacio.png" alt="">
+            <label for="">Evento:2932093</label>
+        </button>
+
+    </div>
+
+    <script>
+        // Obtener el nombre desde la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const nombre = urlParams.get('nombre') || 'Invitado';
+        document.getElementById('nombre').textContent = nombre;
+    </script>
+
+    <!-- Script al final -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () { 
+    const elementosAnimar = document.querySelectorAll(".animar");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible"); // Añadir animación al entrar
+            } else {
+                entry.target.classList.remove("visible"); // Quitar animación al salir
+            }
+        });
+    });
+
+    elementosAnimar.forEach((elemento) => {
+        observer.observe(elemento);
+    });
+});
+
+    </script>
+
+</body>
+</html>
